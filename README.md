@@ -26,7 +26,7 @@ Spring Boot와 Thymeleaf를 이용하여 구현한 메모리 기반 영화 관�
 ### 1.2 GitHub Repository
 
 ```text
-[GitHub Repository URL 입력]
+https://github.com/2026-2-WebService/assign06-c01-22300330
 ```
 
 ### 1.3 Render 배포 URL
@@ -243,6 +243,8 @@ public String create(@ModelAttribute MovieRequest request) {
 
 ### 1.11 CSS 및 Bootstrap 적용
 
+ai 사용됨
+
 Bootstrap 5.3.8을 jsDelivr CDN 방식으로 `list.html`과 `form.html`에 적용했습니다. Bootstrap CSS를 먼저 불러오고 프로젝트의 `style.css`를 나중에 불러와 세부 디자인을 덮어쓸 수 있도록 구성했습니다.
 
 목록 화면에는 다음 Bootstrap 기능을 사용했습니다.
@@ -266,16 +268,14 @@ Bootstrap 5.3.8을 jsDelivr CDN 방식으로 `list.html`과 `form.html`에 적�
 
 ### `@Controller`
 
-HTTP 요청을 처리하고 View 이름을 반환하는 Spring MVC Annotation입니다.
-
-`@RestController`가 객체를 JSON 등의 응답 본문으로 반환하는 것과 달리, `@Controller`는 Thymeleaf HTML 화면을 반환할 때 사용합니다.
+@Controller는 포함된 클래스를 웹요청을 처리하기위한 spring MVC Controller로 등록하게 만드는
+annotation이다.
 
 ### Thymeleaf
 
-서버에서 전달받은 데이터를 HTML에 출력하는 서버 사이드 템플릿 엔진입니다.
+서버에서 전달받은 데이터를 HTML에 출력한다.
 
-이번 프로젝트에서는 다음 문법을 사용했습니다.
-
+아래 
 - `th:each`: Collection 데이터 반복
 - `th:text`: 데이터를 HTML 텍스트로 출력
 - `th:href`: 링크 URL 생성
@@ -447,7 +447,7 @@ Form 데이터 전달과 메모리 저장, 목록 화면 이동을 연결하는 
 
 ### 4.6 AI Usage
 
-AI를 활용하여 다음 내용을 학습하고 확인했습니다.
+AI를 활용하여 다음 내용을 학습했습니다. Readme를 제외한 모든 파일들은 ai가 읽을수는 있었으나 편집을 할수 없게 하였다.
 
 - `@Controller`와 `@RestController`의 차이
 - Spring MVC에서 Model이 수행하는 역할
@@ -459,7 +459,6 @@ AI를 활용하여 다음 내용을 학습하고 확인했습니다.
 - README 구조와 과제 요구사항 점검
 
 AI가 제공한 내용을 그대로 적용하지 않고 다음 내용을 직접 확인하고 수정했습니다.
-
 - `MovieWebController`의 URL과 HTTP Method
 - 목록 화면의 Model 변수명이 `movies`인지 확인
 - `th:each`, `th:text`, `th:href`, `th:action` 문법 확인
@@ -474,18 +473,12 @@ AI가 제공한 내용을 그대로 적용하지 않고 다음 내용을 직접 
 - 새로고침 시 중복 등록 여부
 
 AI가 Bootstrap 기반 `list.html`, `form.html`, `style.css`를 생성하고 개선했으며, 해당 구간을 소스코드 주석으로 표시했습니다. 생성된 UI에서도 기존 URL, HTTP Method, Form action, input name, Model 변수명과 Thymeleaf 표현식을 유지하도록 검토했습니다.
+AI로 README의 초안을 만들었으며 weekly report는 자신의 경험을 바탕으로 작성하였다.
 
 ### 4.7 Reflection
 
-이번 과제를 통해 Controller가 HTML을 직접 만드는 것이 아니라 데이터를 Model에 저장하고, Thymeleaf가 Model의 데이터를 이용하여 HTML을 생성한다는 점을 이해했습니다.
-
-또한 HTML Form의 `name`이 단순한 화면 속성이 아니라 서버의 DTO 필드와 데이터를 연결하는 중요한 역할을 한다는 것을 알게 되었습니다.
-
-앞으로는 Form 입력값이 잘못되었을 때 사용자에게 오류 메시지를 표시하는 방법과 입력값 검증 방법을 더 학습하고 싶습니다.
-
-### 4.8 건의사항
-
-없음
+이번 과제를 통해 Controller가 HTML을 직접 만드는 것이 아니라 데이터를 Model에 저장하고, Thymeleaf의 사용법을 알았다.
+다만 너무 단시간에 많은 내용을 배우다 보니 머리가 아프다.
 
 ## 5. 데이터 저장 방식
 
