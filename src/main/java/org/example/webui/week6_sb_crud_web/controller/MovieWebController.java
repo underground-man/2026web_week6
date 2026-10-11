@@ -20,6 +20,24 @@ public class MovieWebController {
         this.movieService = movieService;
     }
 
+    @GetMapping
+    public String list (Model model){
+        model.addAttribute("movies",movieService.findAll());
+        return "movies/list";
+    }
+
+    @GetMapping("/new")
+    public String form(){
+        return "movies/form";
+    }
+
+    @PostMapping
+    public String create(@ModelAttribute MovieRequest request){
+        movieService.create(request);
+
+        return "redirect:/movies";
+    }
+
 
 
 
