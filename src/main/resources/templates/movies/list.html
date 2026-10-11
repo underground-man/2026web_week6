@@ -2,44 +2,67 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 목록</title>
+
+    <!-- Bootstrap 5.3.8: AI가 제안한 CDN을 공식 문서와 대조하여 적용 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/style.css}">
-    <title>Lists of movies</title>
 </head>
 <body>
 
-        <h1>
-            영화 목록
-        </h1>
+<!--
+    AI 활용 Bootstrap UI 구간
+    직접 확인한 연결: GET /movies, Model 변수 movies,
+    th:each, th:text, th:href="@{/movies/new}"
+-->
+<main class="container py-5">
+    <header class="page-header d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-4">
+        <div>
+            <p class="page-kicker mb-1">MOVIE ARCHIVE</p>
+            <h1 class="display-6 fw-bold mb-0">영화 목록</h1>
+        </div>
 
-        <a th:href ="@{/movies/new}"> 새 영화 등록</a>
+        <a class="btn btn-primary px-4"
+           th:href="@{/movies/new}">
+            새 영화 등록
+        </a>
+    </header>
 
+    <section class="movie-panel shadow-sm" aria-label="등록된 영화 목록">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">감독</th>
+                    <th scope="col">평점</th>
+                    <th scope="col">개봉 연도</th>
+                    <th scope="col">카테고리</th>
+                </tr>
+                </thead>
 
-        <table>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>제목</th>
-                <th>감독</th>
-                <th>평점</th>
-                <th>개봉 연도</th>
-                <th>카테고리</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <tr th:each="movie : ${movies}">
-                <td th:text="${movie.id}">1</td>
-                <td th:text="${movie.title}">2</td>
-                <td th:text="${movie.director}">3</td>
-                <td th:text="${movie.rating}">4</td>
-                <td th:text="${movie.pubyear}">5</td>
-                <td th:text="${movie.category}">6</td>
-            </tr>
-            </tbody>
-        </table>
+                <tbody>
+                <tr th:each="movie : ${movies}">
+                    <td th:text="${movie.id}">1</td>
+                    <td class="fw-semibold" th:text="${movie.title}">영화 제목</td>
+                    <td th:text="${movie.director}">감독</td>
+                    <td th:text="${movie.rating}">0</td>
+                    <td th:text="${movie.pubyear}">2026</td>
+                    <td>
+                        <span class="badge text-bg-light border"
+                              th:text="${movie.category}">카테고리</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
 
 </body>
 </html>

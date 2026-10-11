@@ -1,56 +1,85 @@
+/*
+ * AI 활용 UI 스타일 구간
+ * Bootstrap 5의 layout, table, form, button 클래스를 보완하는 사용자 CSS입니다.
+ * URL, HTTP Method, Form action, input name, Model 변수 및 Thymeleaf 문법에는 영향을 주지 않습니다.
+ */
+:root {
+    --movie-navy: #18233d;
+    --movie-blue: #3454d1;
+    --movie-blue-dark: #263fa4;
+    --movie-paper: #f4f6f9;
+    --movie-line: #d9dee8;
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 24px;
-
-    background-color: #f5f6f8;
+    min-height: 100vh;
+    margin: 0;
+    background: var(--movie-paper);
     color: #20242c;
     font-family: Arial, sans-serif;
 }
 
-h1 {
-    margin-bottom: 24px;
-    color: #18233d;
+.page-kicker {
+    color: var(--movie-blue);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
 }
 
-a {
-    display: inline-block;
-    margin-bottom: 20px;
-    padding: 10px 16px;
-
-    border-radius: 6px;
-    background-color: #3454d1;
-    color: white;
-
-    text-decoration: none;
+.page-header {
+    border-bottom: 1px solid var(--movie-line);
+    padding-bottom: 1.5rem;
 }
 
-a:hover {
-    background-color: #263fa4;
+.movie-panel,
+.movie-form {
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: #ffffff;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
+.table th,
+.table td {
+    padding: 0.9rem 1rem;
+    white-space: nowrap;
 }
 
-th,
-td {
-    padding: 12px 14px;
-    border: 1px solid #d7dbe2;
-    text-align: left;
+.table-dark {
+    --bs-table-bg: var(--movie-navy);
+    --bs-table-border-color: #2b3854;
 }
 
-th {
-    background-color: #18233d;
-    color: white;
+.btn-primary {
+    --bs-btn-bg: var(--movie-blue);
+    --bs-btn-border-color: var(--movie-blue);
+    --bs-btn-hover-bg: var(--movie-blue-dark);
+    --bs-btn-hover-border-color: var(--movie-blue-dark);
+    --bs-btn-active-bg: var(--movie-blue-dark);
+    --bs-btn-active-border-color: var(--movie-blue-dark);
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f0f2f6;
+.form-label {
+    color: var(--movie-navy);
+    font-weight: 600;
+}
+
+.form-control {
+    border-color: #b8c0cf;
+    padding: 0.7rem 0.85rem;
+}
+
+.form-control:focus {
+    border-color: var(--movie-blue);
+    box-shadow: 0 0 0 0.2rem rgba(52, 84, 209, 0.16);
+}
+
+@media (max-width: 575.98px) {
+    .table th,
+    .table td {
+        padding: 0.75rem;
+    }
 }
