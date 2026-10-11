@@ -32,7 +32,11 @@ https://github.com/2026-2-WebService/assign06-c01-22300330
 ### 1.3 Render 배포 URL
 
 ```text
-[Render 배포 후 URL 입력]
+https://two026web-week6.onrender.com/movies
+
+개인 github
+
+https://github.com/underground-man/2026web_week6
 ```
 
 ### 1.4 개발 환경
