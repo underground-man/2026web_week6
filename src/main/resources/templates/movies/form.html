@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 등록</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<h1>새 영화 등록</h1>
+
+<form th:action="@{/movies}" method="post">
+    <div>
+        <input name="title">
+        <input name="director">
+        <input name="rating" type="number">
+        <input name="pubyear">
+        <input name="category" type="number">
+
+        <button type="submit">등록</button>
+    </div>
+</form>
+
+<!-- Form 작성 위치 -->
+
+</body>
+</html>

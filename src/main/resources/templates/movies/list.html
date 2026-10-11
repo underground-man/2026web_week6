@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Lists of movies</title>
+</head>
+<body>
+
+        <h1>
+            영화 목록
+        </h1>
+
+        <a th:href ="@{/movies/new}"> 새 영화 등록</a>
+
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>제목</th>
+                <th>감독</th>
+                <th>평점</th>
+                <th>개봉 연도</th>
+                <th>카테고리</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="movie : ${movies}">
+                <td th:text="${movie.id}">1</td>
+                <td th:text="${movie.title}">2</td>
+                <td th:text="${movie.director}">3</td>
+                <td th:text="${movie.rating}">4</td>
+                <td th:text="${movie.pubyear}">5</td>
+                <td th:text="${movie.category}">6</td>
+            </tr>
+            </tbody>
+        </table>
+
+</body>
+</html>
